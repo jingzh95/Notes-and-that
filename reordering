@@ -1,0 +1,33 @@
+# lv1b gives error if the columns are not ordered so...
+setwd("N:/durable/vac4eu/CDMInstances/vac4eu/")
+path_order <- "N:/durable/vac4eu/Data characterisation/ConcePTION-Level1b-main/p_meta/"
+
+library(openxlsx)
+library(data.table)
+
+table_name <- c("VISIT_OCCURRENCE",
+                "EVENTS",
+                "MEDICINES",
+                "PROCEDURES",
+                "VACCINES",
+                "MEDICAL_OBSERVATIONS",
+                "SURVEY_ID",
+                "SURVEY_OBSERVATIONS",
+                "PERSONS",
+                "OBSERVATION_PERIODS",
+                "PERSON_RELATIONSHIPS",
+                "PRODUCTS")
+                
+for ( i in seq_along(table_name) ){
+  files <- list.files(pattern = table_name[i])
+  df <- fread(files[1], nrow=1)
+  n <- ncol(df)
+  order <- read.xlsx(paste0(path_order,"ConcePTION_CDM tables v2.2.xlsx"), 
+                   table_name[i])
+  order <- order$Description.of.this.table[4:(n+3)]
+  for (j in seq_along(files)){
+    df <- fread(files[j])
+    setcolorder(df, order)
+    fwrite(df, files[j])
+  }
+}
