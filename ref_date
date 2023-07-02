@@ -2,4 +2,8 @@
 ref_date <- as.Date("1901-05-02")
 
 # p1921
+# first delivery
 ref_date <- as.Date("1902-05-16")
+
+# p1111
+ref_date <- as.Date("1975-12-25")
