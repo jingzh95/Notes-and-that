@@ -1,8 +1,10 @@
 # LV1 and LV2 before running
    # change "speciality" to "specialty"
-      # in step1to3 and VO rmd
+      # in step1to3 and VO rmds
+   # double check path for both and add colClasses = "character" to LV2 path file
+   # dir.creat() for output_dir for LV2
    # add mo_source_column, so_source_column, race, origin_of_relationship to
-   # vocabulary_var between 239-249 for the "usual suspect"
+   # vocabulary_var between 239-249 for the "usual suspect" in Step1to3
    # add 
      colClasses = "character"
      # in TAKE_SAMPLE 
