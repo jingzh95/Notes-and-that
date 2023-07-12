@@ -1,0 +1,17 @@
+# LV1 and LV2 before running
+   # remmeber to change "speciality" to "specialty"
+      # in step1to3 and VO rmd
+   # remember to add 
+     colClasses = "character"
+     # in TAKE_SAMPLE 
+   # OR add the format change for PERSONS day/month of birth/death
+
+   # remember to use
+   paste(vx_type, collapse = " ") # Meritxell
+     # instead of for loop to glue the characters together
+
+# LV1 and LV2 after running
+# remember the usual suspect from Step1to3:
+# mo_source_column, race, so_source_column, origin_of_relationships
+
+
